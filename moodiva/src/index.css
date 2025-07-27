@@ -1,0 +1,366 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #D8BFD8;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    font-weight: 500;
+     color: #4B0082;
+    /* color: #555; */
+    margin-bottom: 20px;
+    font-style: italic;
+    font-family: 'Happy Monkey', cursive;
+}
+
+.mood-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+/* .mood-form input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+ */
+
+ .mood-form input {
+    width: 320px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.mood-form input:focus {
+    box-shadow: 0 0 0 3px rgba(58, 175, 169, 0.3); /* soft teal focus ring */
+}
+.mood-form button:hover {
+    background-color: #2A9D8F;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+
+.mood-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #3AAFA9;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+
+
+.select-feature-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D8BFD8;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+
+.select-feature-page .title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.select-feature-page .subtitle {
+  font-size: 1.2rem;
+  color: #4B0082;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.feature-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.feature-buttons button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #3AAFA9;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.feature-buttons button:hover {
+   background-color: #2A9D8F;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+
+.quirky-advice-page {
+  background-color: #E6D3F2; /* soft lavender */
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  ;
+}
+
+.quirky-advice-page .title {
+  font-size: 2.5rem;
+  color: #4B0082; /* deep purple */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.advice-box {
+  background-color: #FFF5E1; /* warm beige */
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 30px;
+  border-left: 6px solid #FFD700; /* gold accent */
+}
+
+.advice-box p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.advice-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.advice-buttons button {
+  padding: 12px 24px;
+  background-color: #3AAFA9; /* teal */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.advice-buttons button:hover {
+  background-color: #2A9D8F;
+  transform: translateY(-2px);
+}
+
+
+.playlist-page {
+  min-height: 100vh;
+  background-color: #D8BFD8; /* lavender base */
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    justify-content: center;
+}
+
+.playlist-page .title {
+  font-size: 2.5rem;
+  color: #4B0082; /* deep purple */
+  margin-bottom: 20px;
+}
+
+.playlist-name {
+  font-size: 1.5rem;
+  color: #3AAFA9; /* teal */
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.song-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.song-item {
+  background-color: #FFF5E1; /* warm beige */
+  border-left: 5px solid #FFD700; /* gold accent */
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.song-item:hover {
+  transform: translateY(-3px);
+}
+
+.listen-button {
+  background-color: #3AAFA9;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.listen-button:hover {
+  background-color: #2A9D8F;
+}
+
+.playlist-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.playlist-buttons button {
+  padding: 12px 20px;
+  background-color: #4B0082;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.playlist-buttons button:hover {
+  background-color: #3e006f;
+  transform: translateY(-2px);
+}
+
+
+.activity-page {
+  min-height: 100vh;
+  background-color: #D8BFD8; /* consistent lavender base */
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    justify-content: center;
+  color: #333;
+}
+
+.activity-title {
+  font-size: 2rem;
+  color: #6A1B9A; /* rich purple */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.activity-item {
+  background-color: #FDEBD0; /* warm peachy tone */
+  border-left: 5px solid #FFA07A; /* light salmon border */
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.activity-item:hover {
+  transform: translateY(-3px);
+}
+
+.activity-link {
+  background-color: #3AAFA9;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+.activity-link:hover {
+  background-color: #2A9D8F;
+}
+
+.activity-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.activity-buttons button {
+  padding: 12px 20px;
+  background-color: #6A1B9A;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.activity-buttons button:hover {
+  background-color: #4A0072;
+  transform: translateY(-2px);
+}
+
+
