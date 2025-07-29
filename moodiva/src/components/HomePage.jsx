@@ -3,7 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useMood } from '../context/MoodContext';
 import { mockAnalyzeMood } from '../utils/mockApi'; // add this line
-import { getMoodAnalysisFromGemini } from "../utils/gemini";
+import { getMoodAnalysisFromMistral } from "../utils/mistral";
+
+
+
 import logo from '../assets/MooDivaLogo.png'; // Assuming you have a logo image
 
 
@@ -17,12 +20,12 @@ export default function HomePage() {
 
   const apiKey = import.meta.env.VITE_HF_API_KEY; // ✅
 
-  useEffect(() => {
+  /* useEffect(() => {
   (async () => {
     const response = await getMoodAnalysisFromGemini("I feel sad but hopeful");
     console.log("Test Gemini response:", response);
   })();
-}, []);
+}, []); */
 
 
 
@@ -45,7 +48,7 @@ navigate("/select-feature");
 
   } */
 
-useEffect(() => {
+/* useEffect(() => {
     (async () => {
       try {
         const response = await getMoodAnalysisFromGemini("I feel sad but hopeful");
@@ -54,9 +57,9 @@ useEffect(() => {
         console.warn("Test Gemini call failed (may be due to quota):", err.message);
       }
     })();
-  }, []);
+  }, []); */
 
-  const handleSubmit = async (e) => {
+/*   const handleSubmit = async (e) => {
     e.preventDefault();
     setUserMood(inputMood);
 
@@ -73,7 +76,24 @@ useEffect(() => {
     }
 
     navigate("/select-feature");
-  };
+  }; */
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setUserMood(inputMood);
+
+  try {
+    const result = await getMoodAnalysisFromMistral(inputMood);
+    setMoodAnalysis(result);
+  } catch (err) {
+    console.error("Mistral error:", err.message);
+    alert("Something went wrong. Using backup mood data.");
+    const fallback = await mockAnalyzeMood(inputMood);
+    setMoodAnalysis(fallback);
+  }
+
+  navigate("/select-feature");
+};
+
 
 
 
@@ -83,7 +103,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <h1 class="title">MooDiva</h1>
+      <h1 className="title">MooDiva</h1>
       
       <h3 className='subtitle'><b>Tell me how you're feeling today ? ...</b></h3>
       <form className="mood-form" onSubmit={handleSubmit}>
